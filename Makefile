@@ -1,2 +1,1 @@
-all:
-	echo "tadoido"
+g++ tipoitem.cpp tipocelula.cpp lista.h lista-arranjo.cpp lista-encadeada.cpp main.cpp -o main
