@@ -3,9 +3,12 @@
 #include "lista-arranjo.h"
 #include "lista.h"
 #include "tipoitem.h"
+#include "notas.h"
 main(){
-    //std::cout<<"num e q deu";
+    //Notas notas("atender moço");
+    //notas.show();
+    std::cout<<"num e q deu"<<std::endl;
     TipoItem x;
-    //x.SetChave(2);    
-    //x.Imprime();
+    x.SetChave(2);    
+    x.Imprime();
 }

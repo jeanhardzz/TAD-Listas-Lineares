@@ -2,6 +2,7 @@
 #define NOTAS
 
 #include <vector>
+#include <string>
 
 class Notas{
   private:
