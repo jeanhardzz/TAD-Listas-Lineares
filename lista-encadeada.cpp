@@ -158,3 +158,59 @@ void ListaEncadeada::Limpa() {
     ultimo = primeiro;
     tamanho = 0;
 }
+
+void ListaEncadeada::Inverte(){
+    TipoCelula *p;
+    TipoCelula *frente=NULL;
+    TipoCelula *tras=NULL;
+    TipoCelula *aux=NULL;
+
+    p = primeiro->prox;
+    frente= p->prox;
+    
+    while (frente!=NULL){ 
+        aux=frente->prox;       
+        frente->prox=p;
+        p->prox=tras;
+        primeiro->prox=frente;
+
+        tras=p;
+        p= frente;
+        frente=aux;                
+        
+    }
+    //Complexidade O(n)
+    
+}
+
+void ListaEncadeada::InsereOrdenado(TipoItem item){
+    TipoCelula *nova,*p,*aux;
+    nova = new TipoCelula();
+    nova->item = item;
+
+    if (tamanho == 0){
+        nova->prox = 0;
+        primeiro->prox= nova;        
+    }else{
+        p = primeiro->prox;
+        if(p->item.GetChave() > nova->item.GetChave()){
+            primeiro->prox=nova;
+            nova->prox=p;
+        }else{
+            while (p->prox!=0) {
+                if (p->prox->item.GetChave() > nova->item.GetChave()) {
+                    aux = p->prox;
+                    p->prox = nova;
+                    nova->prox = aux;
+                    break;                
+                }else if(p->prox->prox == 0){
+                    p->prox->prox=nova;
+                    nova->prox=0;
+                }
+                p = p->prox;
+            }
+        }
+        
+    }
+    tamanho++;        
+}

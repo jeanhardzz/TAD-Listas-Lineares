@@ -10,11 +10,18 @@ main(){
     std::cout<<"num e q deu"<<std::endl;
     TipoItem x;
     ListaEncadeada l;
-    x.SetChave(2);        
-    l.InsereInicio(x); //2
     x.SetChave(5);
-    l.InsereInicio(x); //52
-    x.SetChave(9);
-    l.SetItem(x,2); //59 
+    l.InsereOrdenado(x);
+    x.SetChave(1);
+    l.InsereOrdenado(x);
+      
+    x.SetChave(3);        
+    l.InsereOrdenado(x);
+    x.SetChave(4);
+    l.InsereOrdenado(x);
+    x.SetChave(1);
+    l.InsereOrdenado(x);
+    
+    
     l.Imprime();
 }

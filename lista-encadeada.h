@@ -17,6 +17,8 @@ class ListaEncadeada : public Lista {
         TipoItem Pesquisa(TipoChave c);
         void Imprime();
         void Limpa();
+        void Inverte();
+        void InsereOrdenado(TipoItem item);
     private:
         TipoCelula* primeiro;
         TipoCelula* ultimo;
