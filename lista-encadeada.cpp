@@ -206,6 +206,7 @@ void ListaEncadeada::InsereOrdenado(TipoItem item){
                 }else if(p->prox->prox == 0){
                     p->prox->prox=nova;
                     nova->prox=0;
+                    ultimo = nova;
                 }
                 p = p->prox;
             }
