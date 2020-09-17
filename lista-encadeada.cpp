@@ -215,3 +215,40 @@ void ListaEncadeada::InsereOrdenado(TipoItem item){
     }
     tamanho++;        
 }
+
+void ListaEncadeada::MoveMenor(){    
+    TipoCelula *menor,*p,*aux;
+    if (tamanho == 0)
+        throw "ERRO: Lista vazia!";
+
+    menor=primeiro->prox;
+    p=menor;
+    
+    while (p->prox!=0) {
+            if (p->prox->item.GetChave() < menor->item.GetChave()) {                     
+                menor=p->prox;
+            }
+            p = p->prox;
+    }    
+    p=primeiro->prox;
+    if(p->item.GetChave()!=menor->item.GetChave()){
+        while (p->prox!=0) {
+            if (p->prox->item.GetChave() == menor->item.GetChave()) {                     
+                if(p->prox->prox==0){                    
+                    ultimo=p;
+                    p->prox=0;
+                    break;
+                }else{
+                    p->prox=p->prox->prox;
+                }
+                
+                
+            }            
+            p = p->prox;
+        }
+        aux=primeiro->prox;
+        primeiro->prox=menor;
+        menor->prox=aux;
+    }
+
+}

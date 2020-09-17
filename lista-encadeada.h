@@ -19,6 +19,7 @@ class ListaEncadeada : public Lista {
         void Limpa();
         void Inverte();
         void InsereOrdenado(TipoItem item);
+        void MoveMenor();
     private:
         TipoCelula* primeiro;
         TipoCelula* ultimo;
